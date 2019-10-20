@@ -11,8 +11,8 @@ module.exports = {
     const users = await Dev.find({
       $and : [
         { _id : { $ne : user } },                //not equal user id
-        { _id : { nin : loggedDev.likes } },     //not in loggedDev likes
-        { _id : { nin : loggedDev.dislikes } },  //not in loggedDev dislikes
+        { _id : { $nin : loggedDev.likes } },     //not in loggedDev likes
+        { _id : { $nin : loggedDev.dislikes } },  //not in loggedDev dislikes
       ]
     })
 
